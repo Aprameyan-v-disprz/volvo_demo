@@ -10,7 +10,6 @@ import weaviate
 import weaviate.classes.config as wc
 from weaviate.classes.query import MetadataQuery, Rerank
 from weaviate.classes.query import Filter
-from google.cloud import storage
 import requests, json
 
 
@@ -41,7 +40,6 @@ client = weaviate.connect_to_wcs(
 
 ms_marco_minilm = client.collections.get("Volvo_Deep_Search")
 
-@retry(wait=wait_fixed(0.35), stop=stop_after_attempt(30))
 def get_content_url(name):
     vid_id = {
         'Volvo Trucks Episode 3 Specing for Sustainability [TubeRipper.com].mp3': "B6jt48iroYM",
@@ -153,25 +151,6 @@ def generate(context, query):
     return response.choices[0].message.content
 
 
-def upload_to_bucket(blob_name, dataframe, bucket_name):
-
-    print("Uploading the result into GCS bucket ...")
-
-    # Explicitly use service account credentials by specifying the private key
-    # file.
-    storage_client = storage.Client.from_service_account_json(
-        'creds.json')
-
-    #print(buckets = list(storage_client.list_buckets())
-
-    bucket = storage_client.get_bucket(bucket_name)
-    blob = bucket.blob(blob_name)
-
-    blob.upload_from_string(dataframe.to_csv(), 'text/csv')
-
-    #returns a public url
-    print("Upload completed ...")
-    return blob.public_url
 
 st.title("Deep Search")
 
@@ -227,11 +206,6 @@ if search_button and query:
 
         st.write("_____________________________________________________________________________")
 
-    file = pd.DataFrame(feedback_dict)
-
-    bucket  = "deep-search-demo-logs"
-    name = f"""{"Volvo"+'_'.join(query.split(" "))}"""
-    upload_to_bucket(name, file, bucket)
 
 
 
