@@ -42,21 +42,22 @@ ms_marco_minilm = client.collections.get("Volvo_Deep_Search")
 
 def get_content_url(name):
     vid_id = {
-        'Volvo Trucks Episode 3 Specing for Sustainability [TubeRipper.com].mp3': "B6jt48iroYM",
-        'Volvo Trucks Episode 1 Three Pillar Approach to Decarbonization [TubeRipper.com].mp3': "yWyjsYN7eIY",
-        'Volvo Trucks Episode 4 (Part 2) Charging Infrastructure Charging as a Service [TubeRipper.com].mp3': "q9g7iO404ss",
-        'Volvo Trucks Episode 2 Battery Circularity [TubeRipper.com].mp3': "8K9bDpih3Yo",
-        'Volvo Trucks Episode 4 (Part 1) Charging Infrastructure Turnkey Solutions [TubeRipper.com].mp3': "2Flkb17hbNo",
-        'Volvo Trucks Episode 5 Remanufacturing and sustainability Breathing new life into trucking [TubeRipper.com].mp3': "5wXhvOv1TDA",
-        'Volvo Trucks Episode 6 Sustainability decarbonization through fuel efficiency [TubeRipper.com].mp3': "dYbbOHGBiSQ",
-        'Volvo Trucks Episode 8 Safety and Connectivity lead to Efficiency and Sustainability [TubeRipper.com].mp3': "9_nWRlr5OfQ",
-        'Volvo Trucks Episode 9 Safety First The Essentials of EV Certification for Dealerships [TubeRipper.com].mp3': "SWzG5zm8MaM",
-        'Volvo Trucks Episode 7 How diesel engines can power decarbonization strategies [TubeRipper.com].mp3': "2Ip2AbDE7Cc",
-        'Volvo Trucks Episode 11 The Potential of Second Life Battery Applications [TubeRipper.com].mp3': "IkE-BTdz6iY",
-        'Volvo Trucks Episode 10 Trucks as a Service Easing Electric Truck Adoption [TubeRipper.com].mp3': "zWAbnm-FPIs"
+        'Volvo Trucks Episode 1 Three Pillar Approach to Decarbonization [TubeRipper.com].mp3': "https://storage.googleapis.com/deep-search-demo-logs/volvo_vids/vids/Volvo%20Trucks%20%E2%80%93%20Episode%201%20%E2%80%93%20Three%20Pillar%20Approach%20to%20Decarbonization.mp4",
+        'Volvo Trucks Episode 2 Battery Circularity [TubeRipper.com].mp3': "https://storage.googleapis.com/deep-search-demo-logs/volvo_vids/vids/vid%202.mp4",
+        'Volvo Trucks Episode 3 Specing for Sustainability [TubeRipper.com].mp3': "https://storage.googleapis.com/deep-search-demo-logs/volvo_vids/vids/vid%203.mp4",
+        'Volvo Trucks Episode 4 (Part 1) Charging Infrastructure Turnkey Solutions [TubeRipper.com].mp3': "https://storage.googleapis.com/deep-search-demo-logs/volvo_vids/vids/vid%204.mp4",
+        'Volvo Trucks Episode 4 (Part 2) Charging Infrastructure Charging as a Service [TubeRipper.com].mp3': "https://storage.googleapis.com/deep-search-demo-logs/volvo_vids/vids/vid%205.mp4",
+        'Volvo Trucks Episode 5 Remanufacturing and sustainability Breathing new life into trucking [TubeRipper.com].mp3': "https://storage.googleapis.com/deep-search-demo-logs/volvo_vids/vids/vid%206.mp4",
+        'Volvo Trucks Episode 6 Sustainability decarbonization through fuel efficiency [TubeRipper.com].mp3': "https://storage.googleapis.com/deep-search-demo-logs/volvo_vids/vids/vid%207.mp4",
+        'Volvo Trucks Episode 7 How diesel engines can power decarbonization strategies [TubeRipper.com].mp3': "https://storage.googleapis.com/deep-search-demo-logs/volvo_vids/vids/vid%208.mp4",
+        'Volvo Trucks Episode 8 Safety and Connectivity lead to Efficiency and Sustainability [TubeRipper.com].mp3': "https://storage.googleapis.com/deep-search-demo-logs/volvo_vids/vids/vid%209.mp4",
+        'Volvo Trucks Episode 9 Safety First The Essentials of EV Certification for Dealerships [TubeRipper.com].mp3': "https://storage.googleapis.com/deep-search-demo-logs/volvo_vids/vids/vid%2010.mp4",
+        'Volvo Trucks Episode 10 Trucks as a Service Easing Electric Truck Adoption [TubeRipper.com].mp3': "https://storage.googleapis.com/deep-search-demo-logs/volvo_vids/vids/vid%2011.mp4",
+        'Volvo Trucks Episode 11 The Potential of Second Life Battery Applications [TubeRipper.com].mp3': "https://storage.googleapis.com/deep-search-demo-logs/volvo_vids/vids/vid%2012.mp4",
+        
     }
 
-    result_url = "https://www.youtube.com/watch?v="+vid_id[name]
+    result_url = vid_id[name]
     return result_url
     
 
